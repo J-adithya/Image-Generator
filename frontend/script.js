@@ -1,5 +1,11 @@
 async function generateImage() {
     const prompt = document.getElementById('prompt').value;
+
+    // Show loader and hide previous image
+    document.getElementById('loader').style.display = 'block';
+    const generatedImage = document.getElementById('generated-image');
+    generatedImage.style.display = 'none';
+
     const response = await fetch('/generate', {
         method: 'POST',
         headers: {
@@ -11,15 +17,18 @@ async function generateImage() {
     if (response.ok) {
         const imageBlob = await response.blob();
         const imageUrl = URL.createObjectURL(imageBlob);
-        document.getElementById('image-container').innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
+        generatedImage.src = imageUrl;
+        generatedImage.style.display = 'block';
 
-        // Display the download button
+        // Update download button behavior
         const downloadBtn = document.getElementById('download-btn');
-        downloadBtn.style.display = 'block';
         downloadBtn.onclick = () => downloadImage(imageBlob);
     } else {
         alert('Failed to generate image');
     }
+
+    // Hide loader
+    document.getElementById('loader').style.display = 'none';
 }
 
 function downloadImage(blob) {
@@ -31,4 +40,5 @@ function downloadImage(blob) {
 
 function clearPrompt() {
     document.getElementById('prompt').value = '';
+    document.getElementById('generated-image').style.display = 'none';
 }
