@@ -5,10 +5,10 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: flex-start; /* Align items to the top */
-    align-items: center; /* Center align items horizontally */
-    min-height: 100vh; /* Ensure minimum height */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .header {
@@ -16,18 +16,18 @@ body {
     padding: 20px;
     width: 100%;
     background: #1e1e1e;
-    border-bottom: 1px solid #444; /* Separator line */
+    border-bottom: 1px solid #444;
 }
 
 .header h1 {
-    font-size: 2em; /* Adjust as needed */
+    font-size: 2em;
     margin: 0;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
-    align-items: stretch; /* Stretch items to equal height */
+    align-items: stretch;
     width: 90%;
     max-width: 1200px;
     background: #1e1e1e;
@@ -41,16 +41,16 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the start */
+    align-items: flex-start;
 }
 
 .right-panel {
-    flex: 1; /* Take remaining space */
+    flex: 1;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Align items to the center */
-    background: #2b2b2b; /* Dark background */
+    align-items: center;
+    background: #2b2b2b;
     border-radius: 10px;
 }
 
@@ -59,20 +59,20 @@ body {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 10px;
-    width: 100%; /* Ensure full width */
+    width: 100%;
 }
 
 textarea {
-    width: calc(100% - 20px); /* Adjusted for button width */
+    width: calc(100% - 20px);
     padding: 10px;
     font-size: 14px;
     border: 1px solid #333;
     border-radius: 5px;
     background: #2b2b2b;
     color: #fff;
-    resize: vertical; /* Allow vertical resizing */
-    max-width: 703.6px; /* Max width of 703.6px */
-    height: 41.6px; /* Fixed height of 41.6px */
+    resize: vertical;
+    max-width: 703.6px;
+    height: 41.6px;
 }
 
 .button-group {
@@ -81,8 +81,8 @@ textarea {
 }
 
 button {
-    width: 343.8px; /* Width of 343.8px */
-    height: 41.6px; /* Height of 41.6px */
+    width: 343.8px;
+    height: 41.6px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -90,11 +90,11 @@ button {
     cursor: pointer;
     font-size: 14px;
     border-radius: 5px;
-    margin-right: 10px; /* Space between buttons */
+    margin-right: 10px;
 }
 
 button:last-child {
-    margin-right: 0; /* No margin on the last button */
+    margin-right: 0;
 }
 
 button:hover {
@@ -102,52 +102,81 @@ button:hover {
 }
 
 #output-container {
-    width: 100%; /* Full width */
-    max-width: 702px; /* Max width of 702px */
-    height: 236px; /* Fixed height of 236px */
-    background: #444; /* Placeholder background color */
+    width: 100%;
+    max-width: 702px;
+    height: 236px;
+    background: #444;
     border-radius: 10px;
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#loader {
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#generated-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    display: none;
 }
 
 #download-btn {
-    width: 703.6px; /* Width of 703.6px */
-    height: 41.6px; /* Height of 41.6px */
     margin-top: 20px;
+    width: 100%;
+    max-width: 702px;
+    height: 41.6px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+#download-btn:hover {
+    background-color: #0056b3;
 }
 
 /* Responsive Design */
 @media only screen and (max-width: 768px) {
     .container {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
     }
     
     .right-panel {
-        margin-top: 20px; /* Separate from left panel */
+        margin-top: 20px;
     }
     
     .button-group {
-        flex-direction: column; /* Stack buttons vertically */
+        flex-direction: column;
     }
     
     button {
-        width: 100%; /* Full width for buttons */
-        margin-bottom: 10px; /* Space between stacked buttons */
+        width: 100%;
+        margin-bottom: 10px;
     }
     
     textarea {
-        width: 100%; /* Full width for textarea */
+        width: 100%;
     }
     
     #output-container {
-        width: 100%; /* Full width for output container */
-        max-width: 100%; /* Adjust as needed */
-        height: auto; /* Auto height */
-        margin-bottom: 20px; /* Space below output container */
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
     }
     
     #download-btn {
-        width: 100%; /* Full width for download button */
-        max-width: 703.6px; /* Max width of 703.6px */
+        width: 100%;
+        max-width: 100%;
     }
 }
