@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text to Image Generator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <div class="header">
@@ -19,20 +19,21 @@
                 <textarea id="prompt" placeholder="Enter your text prompt..." rows="4"></textarea>
             </div>
             <div class="button-group">
-                <button id="clear-btn">Clear</button>
-                <button id="generate-btn">Generate Image</button>
+                <button id="clear-btn" onclick="clearPrompt()">Clear</button>
+                <button id="generate-btn" onclick="generateImage()">Generate Image</button>
             </div>
         </div>
 
         <!-- Right Panel -->
         <div class="right-panel">
             <div id="output-container">
-                <!-- Placeholder for generated image -->
+                <div id="loader" style="display: none;">Loading...</div>
+                <img id="generated-image" src="" alt="Generated Image">
             </div>
-            <button id="download-btn">Download Image</button>
+            <button id="download-btn" style="width: 100%; max-width: 702px;">Download Image</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>
